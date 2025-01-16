@@ -42,7 +42,7 @@ async function getQuote() {
         const imgData = imgResponse.data[0].url;
         let imgElement = document.querySelector('#img');
         imgElement.innerHTML = `
-            <img src="${imgData}" style="height: 250px;" alt="Cat image 😺" class="card-img-top"/>
+            <img src="${imgData}" style="height: 280px;" alt="📸 Cat image 😺" class="card-img-top img-fluid"/>
         `;
 
         // Load cat fact
@@ -51,6 +51,7 @@ async function getQuote() {
         document.getElementById('quote').innerHTML = `
             <p class="py-3 fw-bold text-secondary">${factData.fact}</p>
         `;
+
     } catch (error) {
         console.error('Error fetching data:', error);
         document.getElementById('quote').innerText = "Could not fetch a cat fact. Try again!";
